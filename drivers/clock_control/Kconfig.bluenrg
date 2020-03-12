@@ -1,0 +1,14 @@
+# BLUENRG MCU clock control driver config
+
+# Copyright (c) 2020 Linaro
+# Copyright (c) 2020 RnDity Sp. z o.o.
+# SPDX-License-Identifier: Apache-2.0
+
+config CLOCK_CONTROL_BLUENRG_DEVICE_INIT_PRIORITY
+	int "Clock Control Device Priority"
+	default 1
+	help
+	  This option controls the priority of clock control
+	  device initialization. Higher priority ensures that the device
+	  is initialized earlier in the startup cycle. If unsure, leave
+	  at default value 1

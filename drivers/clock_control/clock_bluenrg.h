@@ -1,0 +1,10 @@
+#ifndef ZEPHYR_DRIVERS_CLOCK_CONTROL_BLUENRG_H_
+#define ZEPHYR_DRIVERS_CLOCK_CONTROL_BLUENRG_H_
+
+#define BLUENRG_CLOCK_CONTROL_NAME "bluenrg-cc"
+
+struct bluenrg_pclken {
+	u32_t bus;
+};
+
+#endif /* ZEPHYR_DRIVERS_CLOCK_CONTROL_BLUENRG_H_ */

@@ -1,0 +1,12 @@
+description: BlueNRG UART
+
+compatible: "st,bluenrg-uart"
+
+include: uart-controller.yaml
+
+properties:
+    reg:
+      required: true
+
+    interrupts:
+      required: true

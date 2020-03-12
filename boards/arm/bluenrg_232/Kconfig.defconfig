@@ -1,0 +1,10 @@
+# STM32F412G-DISCO board configuration
+
+# SPDX-License-Identifier: Apache-2.0
+
+if BOARD_BLUENRG_232
+
+config BOARD
+	default "bluenrg_232"
+
+endif # BOARD_BLUENRG_232

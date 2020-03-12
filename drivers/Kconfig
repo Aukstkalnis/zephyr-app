@@ -1,0 +1,18 @@
+# drivers configuration options
+
+# Copyright (c) 2015 Intel Corporation
+# SPDX-License-Identifier: Apache-2.0
+
+menu "Device Drivers"
+
+source "drivers/interrupt_controller/Kconfig"
+
+source "drivers/gpio/Kconfig"
+
+source "drivers/interrupt_controller/Kconfig.shared_irq"
+
+source "drivers/pinmux/Kconfig"
+
+source "drivers/clock_control/Kconfig"
+
+endmenu

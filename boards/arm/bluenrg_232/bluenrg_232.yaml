@@ -1,0 +1,10 @@
+identifier: bluenrg_232
+name: BlueNRG-232
+type: mcu
+arch: arm
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - counter

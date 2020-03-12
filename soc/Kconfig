@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: Apache-2.0
+
+choice
+    prompt "SoC/CPU/Configuration selection"
+
+source "$(SOC_DIR)/$(ARCH)/*/Kconfig.soc"
+
+endchoice
+
+menu "Hardware Configuration"
+osource "$(SOC_DIR)/$(ARCH)/*/Kconfig"
+
+endmenu

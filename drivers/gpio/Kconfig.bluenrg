@@ -1,0 +1,12 @@
+# BLUENGR GPIO configuration
+
+# Copyright (c) 2016 Open-RnD Sp. z o.o.
+# SPDX-License-Identifier: Apache-2.0
+
+config GPIO_BLUENRG
+	bool "BLUENRG GPIO (PORT) driver"
+	default y
+	depends on SOC_BLUENRG
+	select HAS_DTS_GPIO
+	help
+	  Enable support for the BLUENRG GPIO controllers.

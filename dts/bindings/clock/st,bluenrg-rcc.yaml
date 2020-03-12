@@ -1,0 +1,15 @@
+description: BLUENRG RCC (Reset and Clock Controller)
+
+compatible: "st,bluenrg-rcc"
+
+include: [clock-controller.yaml, base.yaml]
+
+properties:
+    reg:
+      required: true
+
+    "#clock-cells":
+      const: 1
+
+clock-cells:
+  - bus
