@@ -1,21 +1,9 @@
 # Boilerplate code, which pulls in the Zephyr build system.
 cmake_minimum_required(VERSION 3.13.1)
 
-# If driver is a project that's managed by west, this line can removed.
-list(APPEND ZEPHYR_EXTRA_MODULES
-  ${CMAKE_CURRENT_SOURCE_DIR}/drivers
-  )
-
-# Add an absolute directory path to the CMake variable
-# SYSCALL_INCLUDE_DIRS. This ensures that the syscall machinery will
-# be able to find the module's syscalls.
-list(APPEND SYSCALL_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/drivers)
-
-# Set board root
 set(BOARD_ROOT ${CMAKE_CURRENT_LIST_DIR})
 set(SOC_ROOT ${CMAKE_CURRENT_LIST_DIR})
-set(SOC_ROOT ${CMAKE_CURRENT_LIST_DIR})
-# set(DTS_ROOR )
+set(DTS_ROOT ${CMAKE_CURRENT_LIST_DIR}/dts)
 
 set(BOARD bluenrg_232)
 
