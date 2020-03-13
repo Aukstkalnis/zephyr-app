@@ -12,7 +12,7 @@
 #include <sys/sys_io.h>
 
 #include "pinmux/pinmux.h"
-#include "pinmux/pinmux_bluenrg.h"
+#include "pinmux_bluenrg.h"
 #include <dt-bindings\pinctrl\bluenrg-pinctrl.h>
 #include <drivers/gpio.h>
 

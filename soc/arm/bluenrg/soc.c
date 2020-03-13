@@ -39,8 +39,8 @@ static int bluenrg_init(struct device *arg)
 	irq_unlock(key);
 
 	__low_level_init();
-	DeviceConfiguration(TRUE,TRUE);
 
+	DeviceConfiguration(TRUE, TRUE);
 	return 0;
 }
 

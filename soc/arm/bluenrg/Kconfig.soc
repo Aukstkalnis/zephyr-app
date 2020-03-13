@@ -12,3 +12,4 @@ config SOC_BLUENRG
 	select CPU_CORTEX_M_HAS_SYSTICK
 	select CORTEX_M_SYSTICK
 	select SERIAL
+	select CLOCK_CONTROL

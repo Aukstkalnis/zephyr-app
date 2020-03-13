@@ -31,5 +31,6 @@
 #include <BlueNRG1_gpio.h>
 #include <BlueNRG1_uart.h>
 #include <BlueNRG1_sysCtrl.h>
+#include <BlueNRG1_adc.h>
 #include <misc.h>
 #endif /* _BLUENRG_SOC_H_ */

@@ -14,11 +14,13 @@ config NUM_GPIOS
 	default 25
 
 config PINMUX_BLUENRG
+	bool
 	default y
 	depends on PINMUX
 
 config UART_BLUENRG
+	bool
 	default y
 	depends on SERIAL
-
+	
 endif # SOC_BLUENRG

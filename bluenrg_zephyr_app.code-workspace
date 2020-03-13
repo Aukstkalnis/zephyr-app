@@ -1,0 +1,56 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "Zephyr Base",
+			"path": "D:/Github/zephyrproject/zephyr"
+		}
+	],
+	"settings": {
+		
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "build: with clean",
+				"type": "shell",
+				"dependsOn":[
+					"clean build",
+					"west buld task"
+				],
+				"dependsOrder": "sequence",
+				"group": {
+					"kind": "build",
+					"isDefault": true
+				},
+				"problemMatcher":[]
+			},
+			{
+				"label": "clean build",
+				"type": "shell",
+				"command":"rmdir",
+				"args": ["/q", "/s", "build"],
+				"isBackground": true,
+				"presentation": {
+					"echo": false,
+					"reveal": "never",
+					"focus": false,
+					"panel": "shared",
+					"showReuseMessage": false,
+					"clear": false
+				},
+				"problemMatcher":[]
+			},
+			{
+				"label": "west buld task",
+				"type": "shell",
+				"command":"west",
+				"args": ["build"],
+				"problemMatcher":[]
+			}
+		]
+	}
+}
