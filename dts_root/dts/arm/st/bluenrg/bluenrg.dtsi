@@ -8,7 +8,7 @@
 #include <mem.h>
 #include <arm/armv6-m.dtsi>
 #include <dt-bindings/gpio/gpio.h>
-#include "dt-bindings/clock/clock_bluenrg.h"
+#include <dt-bindings/clock/clock_bluenrg.h>
 
 / {
 	cpus {

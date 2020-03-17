@@ -1,4 +1,26 @@
-# drivers configuration options
+# BLUENRG UART configuration
 
-# Copyright (c) 2015 Intel Corporation
+# Copyright (c) 2016 Open-RnD Sp. z o.o.
 # SPDX-License-Identifier: Apache-2.0
+
+# menuconfig UART_BLUENRG
+# 	bool "BLUENRG MCU serial driver"
+# 	select SERIAL_HAS_DRIVER
+# 	select SERIAL_SUPPORT_INTERRUPT
+# 	depends on SOC_BLUENRG
+# 	help
+# 	  This option enables the UART driver for BLUENRG family of
+# 	  processors.
+# 	  Say y if you wish to use serial port on BLUENRG MCU.
+
+# if UART_BLUENRG
+
+# # --- port 1 ---
+
+# config UART_1
+# 	bool "Enable BLUENRG USART1 Port"
+# 	help
+# 	  Enable support for USART1 port in the driver.
+# 	  Say y here if you want to use USART1 device.
+
+# endif # UART_BLUENRG

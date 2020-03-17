@@ -9,11 +9,11 @@
 #include "gpio_bluenrg.h"
 #include <dt-bindings/pinctrl/stm32-pinctrlf1.h>
 #include <dt-bindings/pinctrl/bluenrg-pinctrl.h>
-#include <drivers/clock_control/clock_bluenrg.h>
-#include <drivers/interrupt_controller/exti_bluenrg.h>
+#include <clock_bluenrg.h>
+#include <exti_bluenrg.h>
 #include <sys/util.h>
 #include <misc.h>
-#include "gpio_utils.h"
+#include <gpio/gpio_utils.h>
 #include <irq.h>
 /**
  * @brief Common GPIO driver for BlueNRG MCUs.

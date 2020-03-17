@@ -89,7 +89,7 @@ void main(void)
 	if (ret < 0) {
 		return;
 	}
-	unsigned char c; 
+	// unsigned char c; 
 
 	/* Ring buffer init */
 	ring_buf_init(&tx_buf, sizeof(tx_data), tx_data);

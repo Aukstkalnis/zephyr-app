@@ -19,7 +19,7 @@
 #include <device.h>
 #include <soc.h>
 #include <sys/__assert.h>
-#include <drivers/interrupt_controller/exti_bluenrg.h>
+#include <exti_bluenrg.h>
 
 static int bluenrg_exti_init(struct device *dev);
 

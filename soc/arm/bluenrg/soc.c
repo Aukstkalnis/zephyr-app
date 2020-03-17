@@ -15,6 +15,8 @@
 #include <arch/cpu.h>
 #include <arch/arm/aarch32/cortex_m/cmsis.h>
 
+extern int __low_level_init(void);
+
 /**
  * @brief Perform basic hardware initialization at boot.
  *

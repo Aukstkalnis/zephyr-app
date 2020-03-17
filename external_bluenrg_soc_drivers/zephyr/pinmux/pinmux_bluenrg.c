@@ -12,10 +12,10 @@
 #include <errno.h>
 #include <sys/util.h>
 #include <drivers/pinmux.h>
-#include "pinmux.h"
-#include "pinmux_bluenrg.h"
+#include "pinmux/pinmux.h"
+#include <pinmux_bluenrg.h>
 #include <BlueNRG2.h>
-#include <gpio/gpio_bluenrg.h>
+#include <gpio_bluenrg.h>
 
 #define GPIO_REG_SIZE 0x48
 

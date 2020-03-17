@@ -21,7 +21,7 @@
 #include <drivers/clock_control.h>
 
 #include <linker/sections.h>
-#include <drivers/clock_control/clock_bluenrg.h>
+#include <clock_bluenrg.h>
 #include "uart_bluenrg.h"
 
 #include <logging/log.h>
@@ -35,8 +35,8 @@ LOG_MODULE_REGISTER(uart_bluenrg);
 #define UART_STRUCT(dev)					\
 	((UART_Type *)(DEV_CFG(dev))->uconf.base)
 
-#define TIMEOUT 1000
-#define UART_CLOCK       (16000000)
+#define TIMEOUT            1000
+#define UART_CLOCK          (16000000)
 #define UART_CLOCK_CYCLE16        (16)      
 #define UART_CLOCK_CYCLE8         (8)
 

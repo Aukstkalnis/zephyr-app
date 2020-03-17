@@ -3,7 +3,7 @@
 #define ZEPHYR_DRIVERS_GPIO_GPIO_BLUENRG_H_
 
 #include <drivers/clock_control.h>
-#include <drivers/clock_control/clock_bluenrg.h>
+#include <clock_bluenrg.h>
 #include <drivers/gpio.h>
 
 #define BLUENRG_GPIO_PIN_0                 ((uint32_t)0x00000001)  /*!< Pin 0 selected */

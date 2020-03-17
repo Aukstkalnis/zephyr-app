@@ -7,7 +7,7 @@ cmake_minimum_required(VERSION 3.13.1)
 
 set(BOARD_ROOT ${CMAKE_CURRENT_LIST_DIR})
 set(SOC_ROOT ${CMAKE_CURRENT_LIST_DIR})
-set(DTS_ROOT ${CMAKE_CURRENT_LIST_DIR}/dts)
+set(DTS_ROOT ${CMAKE_CURRENT_LIST_DIR}/dts_root)
 
 set(BOARD bluenrg_232)
 
@@ -16,6 +16,9 @@ project(bluenrg_app)
 
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/hal_bluenrg)
 
+# zephyr_include_directories(${CMAKE_CURRENT_LIST_DIR}/dts_root/include)
+
+message("_______applicaseion source" ${APPLICATION_SOURCE_DIR})
 # Add your source file to the "app" target. This must come after
 # the boilerplate code, which defines the target.
 target_sources(app PRIVATE src/main.c)

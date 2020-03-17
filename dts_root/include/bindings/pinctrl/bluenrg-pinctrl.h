@@ -1,0 +1,60 @@
+/*
+ * Copyright (c) 2017 Linaro Limited
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#ifndef ZEPHYR_INCLUDE_DT_BINDINGS_PINCTRL_BLUENRG_PINCTRL_H_
+#define ZEPHYR_INCLUDE_DT_BINDINGS_PINCTRL_BLUENRG_PINCTRL_H_
+
+#define BLUENRG_GPIO_INPUT              ((uint8_t)0x00000000)  /*!< GPIO input selected */
+#define BLUENRG_SERIAL1                 ((uint8_t)0x00000001)  /*!< Serial1 mode selected */
+#define BLUENRG_SERIAL0                 ((uint8_t)0x00000004)  /*!< Serial0 mode selected */
+#define BLUENRG_SERIAL2                 ((uint8_t)0x00000005)  /*!< Serial2 mode selected */
+#define BLUENRG_GPIO_OUTPUT             ((uint8_t)0x00000006)  /*!< GPIO output mode selected */
+
+/* GPIO Mode */
+#define BLUENRG_MODER_INPUT_MODE        (BLUENRG_GPIO_INPUT<<BLUENRG_MODER_SHIFT)
+#define BLUENRG_MODER_OUTPUT_MODE       (BLUENRG_GPIO_OUTPUT<<BLUENRG_MODER_SHIFT)
+#define BLUENRG_MODER_SERIAL1           (BLUENRG_SERIAL1<<BLUENRG_MODER_SHIFT)
+#define BLUENRG_MODER_SERIAL0           (BLUENRG_SERIAL0<<BLUENRG_MODER_SHIFT)
+#define BLUENRG_MODER_SERIAL2           (BLUENRG_SERIAL2<<BLUENRG_MODER_SHIFT)
+#define BLUENRG_MODER_MASK              (0x3)
+#define BLUENRG_MODER_SHIFT             0
+
+/* GPIO Output type */
+#define BLUENRG_OTYPER_NO_PULL_UP       (0x0<<BLUENRG_OTYPER_SHIFT)
+#define BLUENRG_OTYPER_PULL_UP          (0x1<<BLUENRG_OTYPER_SHIFT)
+#define BLUENRG_OTYPER_MASK             (0x1)
+#define BLUENRG_OTYPER_SHIFT            4
+
+#define BLUENRG_GPIO_1  1
+#define BLUENRG_GPIO_2  2
+#define BLUENRG_GPIO_3  3
+#define BLUENRG_GPIO_4  4
+#define BLUENRG_GPIO_5  5
+#define BLUENRG_GPIO_6  6
+#define BLUENRG_GPIO_7  7
+#define BLUENRG_GPIO_8  8
+#define BLUENRG_GPIO_9  9
+#define BLUENRG_GPIO_10 10
+#define BLUENRG_GPIO_11 11
+#define BLUENRG_GPIO_12 12
+#define BLUENRG_GPIO_13 13
+#define BLUENRG_GPIO_14 14
+#define BLUENRG_GPIO_15 15
+#define BLUENRG_GPIO_16 16
+#define BLUENRG_GPIO_17 17
+#define BLUENRG_GPIO_18 18
+#define BLUENRG_GPIO_19 19
+#define BLUENRG_GPIO_20 20
+#define BLUENRG_GPIO_21 21
+#define BLUENRG_GPIO_22 22
+#define BLUENRG_GPIO_23 23
+#define BLUENRG_GPIO_24 24
+#define BLUENRG_GPIO_25 24
+
+#define BLUENRG_GPIO_8_TX (BLUENRG_MODER_SERIAL1 | BLUENRG_OTYPER_NO_PULL_UP)
+#define BLUENRG_GPIO_11_RX (BLUENRG_MODER_SERIAL1 | BLUENRG_OTYPER_NO_PULL_UP)
+
+#endif	/* ZEPHYR_INCLUDE_DT_BINDINGS_PINCTRL_BLUENRG_PINCTRL_H_ */

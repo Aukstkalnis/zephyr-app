@@ -1,7 +1,7 @@
 #include <soc.h>
 #include <drivers/clock_control.h>
 #include <sys/util.h>
-#include <drivers/clock_control/clock_bluenrg.h>
+#include <clock_bluenrg.h>
 
 static inline int bluenrg_clock_control_on(struct device *dev,
 					 clock_control_subsys_t sub_system)
