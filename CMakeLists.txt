@@ -18,7 +18,6 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/hal_bluenrg)
 
 # zephyr_include_directories(${CMAKE_CURRENT_LIST_DIR}/dts_root/include)
 
-message("_______applicaseion source" ${APPLICATION_SOURCE_DIR})
 # Add your source file to the "app" target. This must come after
 # the boilerplate code, which defines the target.
 target_sources(app PRIVATE src/main.c)
