@@ -5,7 +5,7 @@
 if SOC_BLUENRG
 
 config SOC
-	default "bluenrg"
+	default "st_bluenrg"
 
 config NUM_IRQS
 	default 32

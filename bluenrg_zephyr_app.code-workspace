@@ -2,10 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"name": "Zephyr Base",
-			"path": "D:/Github/zephyrproject/zephyr"
 		}
 	],
 	"settings": {

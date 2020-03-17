@@ -1,26 +1,12 @@
-# BLUENRG UART configuration
 
-# Copyright (c) 2016 Open-RnD Sp. z o.o.
-# SPDX-License-Identifier: Apache-2.0
+# comment "Serial Drivers"
 
-# menuconfig UART_BLUENRG
-# 	bool "BLUENRG MCU serial driver"
-# 	select SERIAL_HAS_DRIVER
-# 	select SERIAL_SUPPORT_INTERRUPT
-# 	depends on SOC_BLUENRG
-# 	help
-# 	  This option enables the UART driver for BLUENRG family of
-# 	  processors.
-# 	  Say y if you wish to use serial port on BLUENRG MCU.
+rsource "clock_control/Kconfig.bluenrg"
 
-# if UART_BLUENRG
+rsource "gpio/Kconfig.bluenrg"
 
-# # --- port 1 ---
+rsource "pinmux/Kconfig.bluenrg"
 
-# config UART_1
-# 	bool "Enable BLUENRG USART1 Port"
-# 	help
-# 	  Enable support for USART1 port in the driver.
-# 	  Say y here if you want to use USART1 device.
-
-# endif # UART_BLUENRG
+if SERIAL
+	rsource "serial/Kconfig.bluenrg"
+endif # SERIAL
