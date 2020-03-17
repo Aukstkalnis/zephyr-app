@@ -13,7 +13,7 @@
 
 #include "pinmux/pinmux.h"
 #include "pinmux_bluenrg.h"
-#include <dt-bindings/pinctrl/bluenrg-pinctrl.h>
+#include <bindings/pinctrl/bluenrg-pinctrl.h>
 #include <drivers/gpio.h>
 
 /* pin assignments for NUCLEO-L476RG board */

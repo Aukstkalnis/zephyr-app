@@ -8,7 +8,7 @@
 #include <sys/sys_io.h>
 #include "gpio_bluenrg.h"
 #include <dt-bindings/pinctrl/stm32-pinctrlf1.h>
-#include <dt-bindings/pinctrl/bluenrg-pinctrl.h>
+#include <bindings/pinctrl/bluenrg-pinctrl.h>
 #include <clock_bluenrg.h>
 #include <exti_bluenrg.h>
 #include <sys/util.h>

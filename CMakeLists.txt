@@ -10,9 +10,10 @@ set(SOC_ROOT ${CMAKE_CURRENT_LIST_DIR})
 set(DTS_ROOT ${CMAKE_CURRENT_LIST_DIR}/dts_root)
 
 set(BOARD bluenrg_232)
-
 include($ENV{ZEPHYR_BASE}/cmake/app/boilerplate.cmake NO_POLICY_SCOPE)
 project(bluenrg_app)
+
+zephyr_include_directories(${CMAKE_CURRENT_LIST_DIR}/dts_root/include)
 
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/hal_bluenrg)
 

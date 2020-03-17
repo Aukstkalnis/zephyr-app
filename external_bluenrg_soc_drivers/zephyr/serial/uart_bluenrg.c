@@ -21,7 +21,7 @@
 #include <drivers/clock_control.h>
 
 #include <linker/sections.h>
-#include <drivers/clock_control/clock_bluenrg.h>
+#include <clock_bluenrg.h>
 #include "uart_bluenrg.h"
 
 #include <logging/log.h>
