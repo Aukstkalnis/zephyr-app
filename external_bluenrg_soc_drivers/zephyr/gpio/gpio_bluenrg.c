@@ -31,8 +31,8 @@ int gpio_bluenrg_configure(u32_t *base_addr, int pin, int conf)
 {
     GPIO_InitType GPIO_InitStructure;
   	GPIO_InitStructure.GPIO_Pin = 1<<pin;
-  	GPIO_InitStructure.GPIO_Mode = conf;
-  	GPIO_InitStructure.GPIO_Pull = 0x00;
+  	GPIO_InitStructure.GPIO_Mode = conf & (BLUENRG_MODER_MASK << BLUENRG_MODER_SHIFT);
+  	GPIO_InitStructure.GPIO_Pull = (conf & (BLUENRG_OTYPER_MASK << BLUENRG_OTYPER_SHIFT)) >> BLUENRG_OTYPER_SHIFT;
   	GPIO_InitStructure.GPIO_HighPwr = 0x00;
   	GPIO_Init(&GPIO_InitStructure);
 
