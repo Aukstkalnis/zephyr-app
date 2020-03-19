@@ -9,8 +9,8 @@
  *
  */
 
-#ifndef ZEPHYR_DRIVERS_SERIAL_UART_STM32_H_
-#define ZEPHYR_DRIVERS_SERIAL_UART_STM32_H_
+#ifndef ZEPHYR_DRIVERS_SERIAL_UART_BLUENRG_H_
+#define ZEPHYR_DRIVERS_SERIAL_UART_BLUENRG_H_
 
 /* device config */
 struct uart_bluenrg_config {
@@ -31,5 +31,5 @@ struct uart_bluenrg_data {
 	void *user_data;
 #endif
 };
-
-#endif	/* ZEPHYR_DRIVERS_SERIAL_UART_STM32_H_ */
+#include <device.h>
+#endif	/* ZEPHYR_DRIVERS_SERIAL_UART_BLUENRG_H_ */

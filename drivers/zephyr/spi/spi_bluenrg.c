@@ -6,7 +6,13 @@
 
 #define LOG_LEVEL CONFIG_SPI_LOG_LEVEL
 #include <logging/log.h>
-LOG_MODULE_REGISTER(spi_ll_stm32);
+LOG_MODULE_REGISTER(spi_bluenrg);
+
+#include <arch/cpu.h>
+#include <sys/__assert.h>
+#include <init.h>
+#include <linker/sections.h>
+#include <clock_bluenrg.h>
 
 #include <sys/util.h>
 #include <kernel.h>
@@ -14,11 +20,13 @@ LOG_MODULE_REGISTER(spi_ll_stm32);
 #include <errno.h>
 #include <drivers/spi.h>
 #include <toolchain.h>
+#include <device.h>
 
-#include <drivers/clock_control/clock_bluenrg.h>
+#include <clock_bluenrg.h>
 #include <drivers/clock_control.h>
 
-#include <spi_bluenrg.h>
+#include "spi_bluenrg.h"
+#include "spi_context.h"
 
 #define DEV_CFG(dev)						\
 (const struct spi_bluenrg_config * const)(dev->config->config_info)
@@ -409,18 +417,6 @@ ErrorStatus SdkEvalSpiRead(uint8_t* pBuffer, uint8_t RegisterAddr, uint8_t NumBy
   return SUCCESS;
 }
 
-#define LSM6DS3_IO_Read(pBuffer, DeviceAddr, RegisterAddr, NumByteToRead)    SdkEvalSpiRead(pBuffer, RegisterAddr, NumByteToRead)
-
-static int LSM6DS3_Read_XG_ID( uint8_t *xg_id)
-{
-  if(!xg_id)
-  {
-    return -1;
-  }
-  
-  return LSM6DS3_IO_Read(xg_id, 0xD4, 0x0F, 1);
-}
-
 static int spi_bluenrg_init(struct device *dev)
 {
 	struct spi_bluenrg_data *data __attribute__((unused)) = dev->driver_data;
@@ -484,6 +480,6 @@ DEVICE_AND_API_INIT(spi_bluenrg, DT_SPI_NAME, &spi_bluenrg_init, \
 									\
 BLUENRG_SPI_IRQ_HANDLER()
 
-// #ifdef CONFIG_SPI
+#ifdef CONFIG_SPI_BLUENRG
 BLUENRG_SPI_INIT()
-// #endif
+#endif /* CONFIG_SPI_BLUENRG */

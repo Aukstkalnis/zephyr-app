@@ -7,7 +7,7 @@
 #ifndef ZEPHYR_DRIVERS_SPI_SPI_LL_BLUENRG_H_
 #define ZEPHYR_DRIVERS_SPI_SPI_LL_BLUENRG_H_
 
-#include <drivers/spi/spi_context.h>
+#include "spi_context.h"
 
 typedef void (*irq_config_func_t)(struct device *port);
 

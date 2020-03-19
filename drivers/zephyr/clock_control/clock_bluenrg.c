@@ -31,6 +31,7 @@ static int bluenrg_clock_control_get_subsys_rate(struct device *clock,
 
 static int bluenrg_clock_control_init(struct device *dev)
 {
+	
 	return 0;
 }
 

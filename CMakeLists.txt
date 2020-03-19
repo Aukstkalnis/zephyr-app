@@ -1,6 +1,6 @@
 
 list(APPEND ZEPHYR_EXTRA_MODULES
-	${CMAKE_CURRENT_SOURCE_DIR}/external_bluenrg_soc_drivers
+	${CMAKE_CURRENT_SOURCE_DIR}/drivers
 )
 
 cmake_minimum_required(VERSION 3.13.1)

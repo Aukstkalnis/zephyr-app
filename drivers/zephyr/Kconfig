@@ -1,0 +1,14 @@
+
+# comment "Serial Drivers"
+
+config HAS_BLUENRG_HAL
+	bool
+	depends on HAS_DTS
+	help
+	  This option specifies that the target platform supports device tree
+	  configuration for WDT.
+
+rsource "serial/Kconfig.bluenrg"
+rsource "clock_control/Kconfig.bluenrg"
+rsource "spi/Kconfig.bluenrg"
+rsource "gpio/Kconfig.bluenrg"

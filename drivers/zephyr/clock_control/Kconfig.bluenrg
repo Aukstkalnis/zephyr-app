@@ -4,6 +4,14 @@
 # Copyright (c) 2020 RnDity Sp. z o.o.
 # SPDX-License-Identifier: Apache-2.0
 
+config CLOCK_CONTROL_BLUENRG
+	bool "BLUENRG GPIO (PORT) driver"
+	default y
+	depends on SOC_BLUENRG
+	select HAS_DTS_GPIO
+	help
+	  Enable support for the BLUENRG GPIO controllers.
+
 config CLOCK_CONTROL_BLUENRG_DEVICE_INIT_PRIORITY
 	int "Clock Control Device Priority"
 	default 1

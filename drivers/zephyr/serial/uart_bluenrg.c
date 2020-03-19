@@ -571,6 +571,7 @@ static int uart_bluenrg_init(struct device *dev)
 	const struct uart_bluenrg_config *config = DEV_CFG(dev);
 
 	struct device *clk = device_get_binding(BLUENRG_CLOCK_CONTROL_NAME);
+
 	if (clock_control_on(clk, (clock_control_subsys_t *)&config->pclken) != 0) {
 		return -EIO;
 	}

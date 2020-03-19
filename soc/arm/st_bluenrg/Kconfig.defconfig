@@ -22,5 +22,9 @@ config UART_BLUENRG
 	bool
 	default y
 	depends on SERIAL
+
+config SPI_BLUENRG
+	bool
+	default y
 	
 endif # SOC_BLUENRG

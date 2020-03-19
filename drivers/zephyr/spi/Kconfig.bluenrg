@@ -1,0 +1,16 @@
+# BLUENRG UART configuration
+
+# Copyright (c) 2016 Open-RnD Sp. z o.o.
+# SPDX-License-Identifier: Apache-2.0
+
+menuconfig SPI_BLUENRG
+	bool "BLUENRG MCU SPI controller driver"
+	depends on SOC_BLUENRG
+	help
+	  Enable SPI support on the BLUENRG family of processors.
+
+config SPI_INIT_PRIORITY
+	int "Init priority"
+	default 70
+	help
+	  Device driver initialization priority.
