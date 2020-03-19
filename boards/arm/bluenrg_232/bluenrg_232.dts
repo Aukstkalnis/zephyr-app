@@ -63,3 +63,7 @@
 &adc1 {
 	status = "okay";
 };
+
+&spi1 {
+	status = "okay";
+};

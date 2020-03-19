@@ -16,7 +16,7 @@
 #include <bindings/pinctrl/bluenrg-pinctrl.h>
 #include <drivers/gpio.h>
 
-/* pin assignments for NUCLEO-L476RG board */
+/* pin assignments for STEVAL-BLUENRG board */
 static const struct pin_config pinconf[] = {
 	{ BLUENRG_GPIO_8   , ( BLUENRG_GPIO_8_TX)   },
 	{ BLUENRG_GPIO_11  , ( BLUENRG_GPIO_11_RX)  },
@@ -25,6 +25,10 @@ static const struct pin_config pinconf[] = {
 	{ BLUENRG_GPIO_14  , ( BLUENRG_MODER_OUTPUT_MODE)},
 	{ BLUENRG_GPIO_13  , ( BLUENRG_MODER_INPUT_MODE)},
 	{ BLUENRG_GPIO_5   , ( BLUENRG_MODER_INPUT_MODE)},
+	{ BLUENRG_GPIO_2   , ( BLUENRG_GPIO_2_SPI_MOSI)},
+	{ BLUENRG_GPIO_3   , ( BLUENRG_GPIO_3_SPI_MISO)},
+	{ BLUENRG_GPIO_0   , ( BLUENRG_GPIO_0_CLK_PIN)},
+	{ BLUENRG_GPIO_1   , ( BLUENRG_GPIO_6_CHIP_SEL)},
 };
 
 static int pinmux_bluenrg_init(struct device *port)

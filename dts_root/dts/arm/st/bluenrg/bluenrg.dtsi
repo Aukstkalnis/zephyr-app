@@ -83,6 +83,17 @@
 			label = "ADC";
 			#io-channel-cells = <1>;
 		};
+
+		spi1: spi@40400000 {
+			compatible = "st,bluenrg-spi";
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <0x40400000 0x090>;
+			clocks = <&rcc BLUENRG_CLOCK_PERIPH_SPI>;
+			interrupts = <5 0>;
+			status = "disabled";
+			label = "SPI";
+		};
 	};
 };
 
