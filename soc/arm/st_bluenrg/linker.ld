@@ -1,4 +1,9 @@
-#if defined(CONFIG_SOC_BLUENRG)
+
+#include <arch/arm/aarch32/cortex_m/scripts/linker.ld>
+
+SECTIONS 
+{
+	#include <linker/rel-sections.ld>
 	_MEMORY_RAM_BEGIN_   =  0x20000000; 
 	_MEMORY_RAM_SIZE_    =  0x6000;           /* 24KB  */
 	_MEMORY_RAM_END_     =  0x20005FFF; 
@@ -58,80 +63,23 @@
     	_ebssblue = .;         /* define a global symbol at .bss.blueRAM end */
     	. = 0x20c + MEMORY_RAM_APP_OFFSET - 0x2cc;
 	} GROUP_DATA_LINK_IN(RAMABLE_REGION, RAMABLE_REGION)
+	
 
-	 /* This is to emulate place at end of IAR linker */
-  CSTACK (ORIGIN(RAMABLE_REGION) + LENGTH(RAMABLE_REGION) - _Min_Stack_Size) (NOLOAD) :
-  {
-    . = ALIGN(4);
-    _estack = . + _Min_Stack_Size;         /* define a global symbol at bss end */
-    . = ALIGN(4);
-  } GROUP_DATA_LINK_IN(RAMABLE_REGION, RAMABLE_REGION)
-
-/* this is what comes after*/
-
-    SECTION_DATA_PROLOGUE(_BSS_SECTION_NAME,(NOLOAD),)
+	/* This is to emulate place at end of IAR linker */
+	CSTACK (ORIGIN(RAMABLE_REGION) + LENGTH(RAMABLE_REGION) - _Min_Stack_Size) (NOLOAD) :
 	{
-        /*
-         * For performance, BSS section is assumed to be 4 byte aligned and
-         * a multiple of 4 bytes
-         */
-        . = ALIGN(4);
-	__bss_start = .;
-	__kernel_ram_start = .;
-
-	*(.bss)
-	*(".bss.*")
-	*(COMMON)
-	*(".kernel_bss.*")
+		. = ALIGN(4);
+		_estack = . + _Min_Stack_Size;         /* define a global symbol at bss end */
+		. = ALIGN(4);
+	} GROUP_DATA_LINK_IN(RAMABLE_REGION, RAMABLE_REGION)
 
 	_ebss = __bss_start;
 	_sbss = __bss_start;
-
-#ifdef CONFIG_CODE_DATA_RELOCATION
-
-#include <linker_sram_bss_relocate.ld>
-#endif
-
-        /*
-         * As memory is cleared in words only, it is simpler to ensure the BSS
-         * section ends on a 4 byte boundary. This wastes a maximum of 3 bytes.
-		 */
-	__bss_end = ALIGN(4);
 	_ebssblue = __bss_end;
-	} GROUP_DATA_LINK_IN(RAMABLE_REGION, RAMABLE_REGION)
-
-   SECTION_DATA_PROLOGUE(_DATA_SECTION_NAME,,)
-	{
-	__data_ram_start = .;
-	_sdata = .;
-	*(.data)
-	*(".data.*")
-	*(".kernel.*")
-
-/* Located in generated directory. This file is populated by the
- * zephyr_linker_sources() Cmake function.
- */
-#include <snippets-rwdata.ld>
-#ifdef CONFIG_SOC_RWDATA_LD
-#include <soc-rwdata.ld>
-#endif
-
-#ifdef CONFIG_CUSTOM_RWDATA_LD
-/* Located in project source directory */
-#include <custom-rwdata.ld>
-#endif
-
-#ifdef CONFIG_CODE_DATA_RELOCATION
-#include <linker_sram_data_relocate.ld>
-#endif
-
-} GROUP_DATA_LINK_IN(RAMABLE_REGION, ROMABLE_REGION)
-
-/* used by the startup to initialize data */
+	_sdata = __data_ram_start;
+	/* used by the startup to initialize data */
 	_sidata = LOADADDR(_DATA_SECTION_NAME);
 	/* used by the startup to initialize data */
 	_sidata2 = LOADADDR(.ram_preamble);
-
-#endif
-
-#include <arch/arm/aarch32/cortex_m/scripts/linker.ld>
+	_edata = __data_ram_end;
+}
